@@ -8,14 +8,14 @@ Proyecto de ejemplo orientado a patrones de diseño y buenas prácticas en Java.
 
 ## Contenido principal
 
-- src/main/java/edu/dosw/lab/ - Código fuente Java del laboratorio.
-- docs/uml/ - Diagramas UML usados en el laboratorio.
-- docs/imagenes/ - Imágenes y recursos gráficos.
-- HELP.md - Notas y descubrimientos importantes durante la construcción del proyecto.
+- `src/main/java/edu/dosw/lab/` - Código fuente Java del laboratorio.
+- `docs/uml/` - Diagramas UML usados en el laboratorio.
+- `docs/imagenes/` - Imágenes y recursos gráficos.
+- `HELP.md` - Notas y descubrimientos importantes durante la construcción del proyecto.
 
 ## Nota importante del proyecto
 
-El archivo HELP.md contiene una observación relevante: el nombre de paquete original edu.dosw.lab.Laboratorio-2-CVDS-DOSW-01 es inválido en Java y en este repositorio se usa edu.dosw.lab.Laboratorio_2_CVDS_DOSW_01 (con guiones bajos). Si vas a cambiar el paquete padre o el POM, revisa esa modificación para evitar conflictos.
+El archivo `HELP.md` contiene una observación relevante: el nombre de paquete original `edu.dosw.lab.Laboratorio-2-CVDS-DOSW-01` es inválido en Java y en este repositorio se usa `edu.dosw.lab.Laboratorio_2_CVDS_DOSW_01` (con guiones bajos). Si vas a cambiar el paquete padre o el POM, revisa esa modificación para evitar conflictos.
 
 ## Requisitos
 
@@ -27,39 +27,39 @@ El archivo HELP.md contiene una observación relevante: el nombre de paquete ori
 
 Compilar y empaquetar el proyecto:
 
-powershell
+```powershell
 mvn clean package
-
+```
 
 Ejecutar pruebas unitarias:
 
-powershell
+```powershell
 mvn test
-
+```
 
 Actualizar dependencias y verificar el árbol de dependencias:
 
-powershell
+```powershell
 mvn dependency:tree
-
+```
 
 Si el proyecto requiere generar una imagen OCI (Spring Boot con plugin de build-image):
 
-powershell
+```powershell
 mvn spring-boot:build-image
-
+```
 
 > Observación: los comandos asumen que Maven y Java están instalados y accesibles desde PowerShell.
 
 ## Estructura del paquete
 
-El código está organizado por paquetes bajo edu.dosw.lab y subdividido en carpetas según el tipo de patrón o contenido:
+El código está organizado por paquetes bajo `edu.dosw.lab` y subdividido en carpetas según el tipo de patrón o contenido:
 
-- comportamentales/ - Implementaciones de patrones comportamentales.
-- creacionales/ - Implementaciones de patrones creacionales.
-- estructurales/ - Implementaciones de patrones estructurales.
-- solid/ - Ejemplos relacionados con principios SOLID.
-- util/ - Clases utilitarias compartidas.
+- `comportamentales/` - Implementaciones de patrones comportamentales.
+- `creacionales/` - Implementaciones de patrones creacionales.
+- `estructurales/` - Implementaciones de patrones estructurales.
+- `solid/` - Ejemplos relacionados con principios SOLID.
+- `util/` - Clases utilitarias compartidas.
 
 ## Cómo contribuir
 
@@ -69,7 +69,7 @@ El código está organizado por paquetes bajo edu.dosw.lab y subdividido en carp
 
 ## Notas sobre POM y herencia
 
-El HELP.md menciona que el POM del proyecto anuló elementos heredados del POM padre (por ejemplo, <license> y <developers>) mediante sobreescrituras vacías para evitar heredar contenido no deseado. Si cambias el POM padre y deseas heredar esos elementos, elimina las anulaciones vacías en el POM del proyecto.
+El `HELP.md` menciona que el POM del proyecto anuló elementos heredados del POM padre (por ejemplo, `<license>` y `<developers>`) mediante sobreescrituras vacías para evitar heredar contenido no deseado. Si cambias el POM padre y deseas heredar esos elementos, elimina las anulaciones vacías en el POM del proyecto.
 
 ## Recursos y documentación
 
@@ -86,4 +86,4 @@ Para dudas relacionadas con el laboratorio, contacta al profesor o al equipo de 
 
 ---
 
-Archivo generado automáticamente a partir del contenido del repositorio y HELP.md.
+Archivo generado automáticamente a partir del contenido del repositorio y `HELP.md`.
