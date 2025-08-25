@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 public class Hamburguesa {
     private ArrayList<Ingrediente> ingredientes;
+    private int precio;
 
     public Hamburguesa(List<Integer> listaDeIngredientes){
 
@@ -49,17 +50,21 @@ public class Hamburguesa {
                     ingredientes.add(nuevoIngrediente);
                     break;
             }
+            calcularCostoPorIngrediente();
 
         }
 
     }
-    public int getCostoPorIngrediente(){
-        int total = ingredientes.stream().mapToInt(Ingrediente::getCosto).sum();
-        return total;
+    private void calcularCostoPorIngrediente(){
+        this.precio = ingredientes.stream().mapToInt(Ingrediente::getCosto).sum();
+
     }
     public void getIngredientes(){
         String nombres = ingredientes.stream().map(Ingrediente::getNombre).collect(Collectors.joining(", "));
         System.out.println("Ingredientes seleccionados: " + nombres);
+    }
+    public int getPrecio(){
+        return precio;
     }
 }
 

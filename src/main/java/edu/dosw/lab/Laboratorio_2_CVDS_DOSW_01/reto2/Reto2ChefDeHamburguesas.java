@@ -23,9 +23,10 @@ public class Reto2ChefDeHamburguesas {
         List<Integer> numeroDeIngrediente = Arrays.stream(linea.split(",")).map(String::trim).map(Integer::parseInt).collect(Collectors.toList());
 
         Hamburguesa suHamburguesa = new Hamburguesa(numeroDeIngrediente);
-        int precioDeLaHamburguesa = suHamburguesa.getCostoPorIngrediente();
+
         System.out.println("\n--- HAMBURGUESA PERSONALIZADA ---");
         suHamburguesa.getIngredientes();
+        int precioDeLaHamburguesa = suHamburguesa.getPrecio();
         System.out.println("Precio total: $" + precioDeLaHamburguesa);
         System.out.println("--------------------------");
         System.out.println("¡Disfrute de su hamburguesa!");
