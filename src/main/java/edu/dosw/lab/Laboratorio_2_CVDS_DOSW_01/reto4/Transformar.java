@@ -4,7 +4,6 @@ import java.util.*;
 
 public class Transformar {
 
-    // Tabla de tasas de conversión
     private static final Map<String, Map<String, Double>> tasas = new HashMap<>();
 
     static {

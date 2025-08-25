@@ -9,7 +9,7 @@ public class Main {
 
         System.out.print("Ingrese número de transacciones: ");
         int n = sc.nextInt();
-        sc.nextLine(); // limpiar buffer
+        sc.nextLine();
 
         Map<String, Double> totales = new HashMap<>();
 
@@ -26,10 +26,9 @@ public class Main {
             String[] destinosArray = sc.nextLine().split(",");
             List<String> destinos = Arrays.asList(destinosArray);
 
-            // Procesar conversión
+
             Map<String, Double> resultados = convertidor.convertirAMultiples(origen, monto, destinos);
 
-            // Mostrar resultados de la transacción
             System.out.println("Transacción " + i + ": " + monto + " " + origen);
             resultados.forEach((moneda, valor) -> {
                 System.out.println("Convertido a " + moneda + ": " + valor);
@@ -38,7 +37,6 @@ public class Main {
             System.out.println();
         }
 
-        // Mostrar totales acumulados
         System.out.println("---- Totales por moneda ----");
         totales.forEach((moneda, total) ->
                 System.out.println(moneda + ": " + total + " " + moneda));
