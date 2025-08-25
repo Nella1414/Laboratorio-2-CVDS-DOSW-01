@@ -4,6 +4,7 @@ import java.util.*;
 
 public class Convertidor {
 
+    // Tabla de tasas de conversión
     private static final Map<String, Map<String, Double>> rates = new HashMap<>();
 
     static {
@@ -33,7 +34,7 @@ public class Convertidor {
         ));
     }
 
-    // Método de conversión
+    // Conversión de una moneda a otra
     public double transformar(String inicial, String objetivo, double monto) {
         if (!rates.containsKey(inicial) || !rates.get(inicial).containsKey(objetivo)) {
             throw new IllegalArgumentException("Conversión no soportada: " + inicial + " -> " + objetivo);
@@ -41,22 +42,11 @@ public class Convertidor {
         return monto * rates.get(inicial).get(objetivo);
     }
 
-    // Ejemplo usando Stream para convertir a múltiples monedas
+    // Conversión a múltiples monedas (usando streams)
     public Map<String, Double> convertirAMultiples(String inicial, double monto, List<String> objetivos) {
         return objetivos.stream()
                 .collect(HashMap::new,
                         (map, obj) -> map.put(obj, transformar(inicial, obj, monto)),
                         HashMap::putAll);
-    }
-
-    // Main de prueba
-    public static void main(String[] args) {
-        Convertidor c = new Convertidor();
-
-        // Ejemplo: 50 EUR a USD y JPY
-        Map<String, Double> resultado = c.convertirAMultiples("EUR", 50, Arrays.asList("USD", "JPY"));
-        resultado.forEach((moneda, valor) ->
-                System.out.println("Convertido a " + moneda + ": " + valor)
-        );
     }
 }
