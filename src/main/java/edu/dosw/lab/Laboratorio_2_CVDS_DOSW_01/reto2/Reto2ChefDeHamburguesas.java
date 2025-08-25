@@ -15,9 +15,10 @@ public class Reto2ChefDeHamburguesas {
                 "\n1. Pan ($3.000)" +
                 "\n2. Carne ($10.000)" +
                 "\n3. Queso ($5.000)" +
-                "\n4. Vegetales ($3.000)" +
-                "\n5. Salsas ($3.000)" +
-                "\n6. Agregar un nuevo ingrediente" +
+                "\n4. Lechuga ($2.000)" +
+                "\n5. Tomate ($2.000)" +
+                "\n6. Salsas ($3.000)" +
+                "\n7. Agregar un nuevo ingrediente" +
                 "\nIngrese los números separados por coma: ");
         String linea = sc.nextLine();
         List<Integer> numeroDeIngrediente = Arrays.stream(linea.split(",")).map(String::trim).map(Integer::parseInt).collect(Collectors.toList());

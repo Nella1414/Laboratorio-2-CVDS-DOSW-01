@@ -90,9 +90,21 @@ Archivo generado automáticamente a partir del contenido del repositorio y `HELP
 
 ----
 ## RETOS
-### Reto #2
+## Reto #2
+#### Diseño UML
+![diagramaUMLreto2.png](capturasParaREADME/diagramaUMLreto2.png)
+### Patrón de Diseño
 
-### Reto #8
+Creacional
+
+### Patrón Utilizado
+
+Factory Method
+
+### Justificación
+
+Hamburguesa crea un objeto dependiendo de las elecciones de usuario (Pan, Carne, Queso,...), por lo que Hamburguesa está funcionando como una Factory.
+## Reto #8
 #### Diseño UML
 ![diagramaUMLreto8.png](capturasParaREADME/diagramaUMLreto8.png)
 Uso de principios SOLID: 

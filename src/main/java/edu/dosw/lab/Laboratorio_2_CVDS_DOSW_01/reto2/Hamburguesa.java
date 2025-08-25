@@ -29,14 +29,18 @@ public class Hamburguesa {
                     ingredientes.add(queso);
                     break;
                 case 4:
-                    Vegetales vegetales = new Vegetales();
-                    ingredientes.add(vegetales);
+                    Lechuga lechuga = new Lechuga();
+                    ingredientes.add(lechuga);
                     break;
                 case 5:
-                    Salsas salsas = new Salsas();
-                    ingredientes.add(salsas);
+                    Tomate tomate = new Tomate();
+                    ingredientes.add(tomate);
                     break;
                 case 6:
+                    Salsa salsa = new Salsa();
+                    ingredientes.add(salsa);
+                    break;
+                case 7:
                     Scanner scanner = new Scanner(System.in);
                     System.out.println("Ingrese el nombre del nuevo ingrediente: ");
                     String nombre = scanner.nextLine();
