@@ -87,3 +87,21 @@ Para dudas relacionadas con el laboratorio, contacta al profesor o al equipo de 
 ---
 
 Archivo generado automáticamente a partir del contenido del repositorio y `HELP.md`.
+
+----
+## RETOS
+### Reto #2
+
+### Reto #8
+#### Diseño UML
+![diagramaUMLreto8.png](capturasParaREADME/diagramaUMLreto8.png)
+Uso de principios SOLID: 
+- S (Single Responsability): cada Clase tiene un rol claro (Animal, Cuidador, Visitante,...)
+- O (Open/Closed): los atributos dinámicos y animales son extensibles por herencia o nuevas implementaciones.
+- L (Liskov): Mamifero, Reptil y Ave son subclases de Animal, entonces los objetos de tipo Mamifero, Reptil y Ave pueden ser reemplazados por objetos de tipo Animal sin alterar las propiedades del programa.
+- I (Interface Segregation): Se usa una interfaz en AtributoDinamico.
+- L (Dependency Inversion): La clase Animal no está acoplada a clases concretas como ColorPelaje o Rareza.
+  En su lugar, depende de la interfaz AtributoDinamico, lo que permite extender el sistema con nuevos atributos sin modificar el código existente.
+
+Patron:
+Se aplicó el patrón Singleton en la clase ECIZoo porque solo se requiere un Zoologico dentro del contexto del problema.
