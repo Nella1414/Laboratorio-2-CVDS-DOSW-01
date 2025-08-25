@@ -5,7 +5,7 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Convertidor convertidor = new Convertidor();
+        Transformar convertidor = new Transformar();
 
         System.out.print("Ingrese número de transacciones: ");
         int n = sc.nextInt();
