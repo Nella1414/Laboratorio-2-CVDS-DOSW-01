@@ -1,9 +1,9 @@
-package reto2;
+package edu.dosw.lab.Laboratorio_2_CVDS_DOSW_01.reto2;
 
-public class Pan extends Ingrediente{
-    public Pan(){
+public class Salsas extends Ingrediente{
+    public Salsas(){
         this.costo = 3000;
-        this.nombre = "Pan";
+        this.nombre = "Salsas";
     }
 
     @Override
@@ -16,3 +16,4 @@ public class Pan extends Ingrediente{
         return nombre;
     }
 }
+

@@ -1,6 +1,6 @@
 package edu.dosw.lab;
 
-import reto2.Reto2ChefDeHamburguesas;
+import edu.dosw.lab.Laboratorio_2_CVDS_DOSW_01.reto2.Reto2ChefDeHamburguesas;
 
 public class Application {
     public static void main(String[] args) {

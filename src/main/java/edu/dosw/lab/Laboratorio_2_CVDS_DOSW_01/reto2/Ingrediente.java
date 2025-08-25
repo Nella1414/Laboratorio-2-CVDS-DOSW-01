@@ -1,4 +1,4 @@
-package reto2;
+package edu.dosw.lab.Laboratorio_2_CVDS_DOSW_01.reto2;
 
 public abstract class Ingrediente {
     protected Integer costo;
