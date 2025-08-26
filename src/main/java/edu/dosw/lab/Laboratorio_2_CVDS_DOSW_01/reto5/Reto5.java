@@ -26,12 +26,11 @@ public class Reto5 {
             int coffees = readPositiveInt(scanner, "Número de cafés a personalizar: ");
             manageCustomToppings(scanner);
 
-            // Lista de cafés, cada uno con su lista de toppings seleccionados
-            List<List<Topping>> coffeesToppings = new ArrayList<>();
+            List<Beverage> beverages = new ArrayList<>();
             for (int i = 1; i <= coffees; i++) {
-                coffeesToppings.add(selectToppingsForCoffee(scanner, i));
+                beverages.add(buildCoffee(scanner, i));
             }
-            printInvoice(coffeesToppings);
+            printInvoice(beverages);
         } catch (Exception e) {
             System.out.println("Error: Entrada no válida. Ejecución terminada.");
         }
@@ -83,13 +82,13 @@ public class Reto5 {
         System.out.println(LINE);
     }
 
-    private static List<Topping> selectToppingsForCoffee(Scanner scanner, int index) {
+    private static Beverage buildCoffee(Scanner scanner, int index) {
         System.out.println("--- Café " + index + " ---");
         printToppings();
         System.out.println("Ingrese IDs de toppings separados por coma (vacío para ninguno): ");
         String line = scanner.nextLine().trim();
-        List<Topping> list = new ArrayList<>();
-        if (line.isEmpty()) return list; // sin toppings
+        Beverage beverage = new BaseCoffee();
+        if (line.isEmpty()) return beverage; // sin toppings
         String[] parts = line.split(",");
         for (String part : parts) {
             String trimmed = part.trim();
@@ -98,7 +97,7 @@ public class Reto5 {
                 int id = Integer.parseInt(trimmed);
                 Topping topping = findToppingById(id);
                 if (topping != null) {
-                    list.add(topping);
+                    beverage = new ToppingDecorator(beverage, topping);
                 } else {
                     System.out.println("ID " + id + " no encontrado (ignorado).");
                 }
@@ -106,7 +105,7 @@ public class Reto5 {
                 System.out.println("Entrada '" + trimmed + "' no es un número (ignorada).");
             }
         }
-        return list;
+        return beverage;
     }
 
     private static Topping findToppingById(int id) {
@@ -117,21 +116,16 @@ public class Reto5 {
     }
 
     // ---------------- Factura ----------------
-    private static void printInvoice(List<List<Topping>> coffees) {
+    private static void printInvoice(List<Beverage> beverages) {
         System.out.println("\n--- RESUMEN DE CAFÉS PERSONALIZADOS ---");
         int grandTotal = 0;
         int coffeeIndex = 1;
-        for (List<Topping> coffee : coffees) {
-            int total = coffee.stream().mapToInt(Topping::getPrice).sum();
+        for (Beverage b : beverages) {
+            int total = b.cost();
             grandTotal += total;
             System.out.println(LINE);
             System.out.println("Café " + coffeeIndex++ + ":");
-            if (coffee.isEmpty()) {
-                System.out.println("Sin toppings (solo café base)");
-            } else {
-                System.out.println("Toppings:");
-                coffee.forEach(t -> System.out.printf(" - %s ($%d)%n", t.getName(), t.getPrice()));
-            }
+            System.out.println("Descripción: " + b.getDescription());
             System.out.println("Total café: $" + total);
         }
         System.out.println(LINE);
