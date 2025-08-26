@@ -90,11 +90,22 @@ Archivo generado automáticamente a partir del contenido del repositorio y `HELP
 
 ----
 ## RETOS
+## Reto #1: El problema de la tienda de Don Pepe
+Don Pepe es el dueño de una tienda, pero cada fin de mes siempre se encuentra con que sus cuentas no cuadran. Su problema principal es que la forma en que vende sus productos y calcula los descuentos no está organizada, y eso le genera pérdidas y confusión.
+
+### Diseño UML
+![diagramaUMLreto2.png](capturasParaREADME/diagramaUMLreto1.png)
+### Patrón de Diseño
+Creacional - Factory
+
+### Justificación
+
+Se hizo uso de este Patrón de Diseño para la creación de los items vendidos en la tienda
+
 ## Reto #2
-#### Diseño UML
+### Diseño UML
 ![diagramaUMLreto2.png](capturasParaREADME/diagramaUMLreto2.png)
 ### Patrón de Diseño
-
 Creacional
 
 ### Patrón Utilizado
