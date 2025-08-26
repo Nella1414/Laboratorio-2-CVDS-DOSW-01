@@ -94,7 +94,7 @@ Archivo generado automáticamente a partir del contenido del repositorio y `HELP
 Don Pepe es el dueño de una tienda, pero cada fin de mes siempre se encuentra con que sus cuentas no cuadran. Su problema principal es que la forma en que vende sus productos y calcula los descuentos no está organizada, y eso le genera pérdidas y confusión.
 
 ### Diseño UML
-![diagramaUMLreto2.png](capturasParaREADME/diagramaUMLreto1.png)
+![diagramaUMLreto1.png](capturasParaREADME/diagramaUMLreto1.png)
 ### Patrón de Diseño
 Creacional - Factory
 
@@ -115,6 +115,27 @@ Factory Method
 ### Justificación
 
 Hamburguesa crea un objeto dependiendo de las elecciones de usuario (Pan, Carne, Queso,...), por lo que Hamburguesa está funcionando como una Factory.
+
+## Reto #5: El Café Personalizado
+La Cafetería Creativa permite a los clientes personalizar su café agregando toppings, salsas y complementos. Cada topping tiene un precio adicional y puede combinarse con otros. Sin embargo el sistema actual es muy deficiente por lo cual los han contratado para mejorar la producción de los cafés siendo baristas.
+El administrador desea se puedan agregar nuevos toppings al café sin modificar su base.
+
+
+### Diseño UML
+![diagramaUMLreto5.png](capturasParaREADME/diagramaUMLreto5.png)
+### Patrón de Diseño
+Creacional - Decorator
+
+### Justificación
+
+Se hizo uso de este Patrón de Diseño por:
+- Open/Close: se pueden añadir nuevos toppings (nuevos decoradores) sin modificar las clases existentes.
+- Reutilización y responsabilidad única: cada decorador se encarga solo de añadir su precio y parte de la descripción, manteniendo BaseCoffee simple.
+
+### Como se aplico
+
+Beverage es la interfaz común, BaseCoffee la implementación base y BeverageDecorator la clase abstracta que envuelve otra Beverage; cada topping se modela como un objeto Topping y se aplica creando un ToppingDecorator que envuelve la bebida actual (beverage = new ToppingDecorator(beverage, topping)), de modo que getDescription concatena nombres y cost suma precios de forma acumulativa, permitiendo componer en tiempo de ejecución cualquier combinación de toppings sin crear clases por combinación.
+
 ## Reto #8
 #### Diseño UML
 ![diagramaUMLreto8.png](capturasParaREADME/diagramaUMLreto8.png)

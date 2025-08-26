@@ -118,16 +118,18 @@ public class Reto5 {
     // ---------------- Factura ----------------
     private static void printInvoice(List<Beverage> beverages) {
         System.out.println("\n--- RESUMEN DE CAFÉS PERSONALIZADOS ---");
-        int grandTotal = 0;
-        int coffeeIndex = 1;
-        for (Beverage b : beverages) {
-            int total = b.cost();
-            grandTotal += total;
+        // Cálculo del total general usando streams
+        int grandTotal = beverages.stream().mapToInt(Beverage::cost).sum();
+
+        // Impresión detallada (índice usando IntStream para mostrar uso adicional de streams)
+        java.util.stream.IntStream.range(0, beverages.size()).forEach(i -> {
+            Beverage b = beverages.get(i);
             System.out.println(LINE);
-            System.out.println("Café " + coffeeIndex++ + ":");
+            System.out.println("Café " + (i + 1) + ":");
             System.out.println("Descripción: " + b.getDescription());
-            System.out.println("Total café: $" + total);
-        }
+            System.out.println("Total café: $" + b.cost());
+        });
+
         System.out.println(LINE);
         System.out.println("TOTAL A PAGAR: $" + grandTotal);
         System.out.println("Disfrute su café!");
