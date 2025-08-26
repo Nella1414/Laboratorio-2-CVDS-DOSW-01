@@ -45,7 +45,6 @@ public class ControlRemotoApp {
             control.ejecutarAccion(usuario, comando, deshacer);
         }
 
-        // Mostrar resultados
         control.mostrarHistorial();
         control.investigarUsuarios();
     }
