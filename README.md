@@ -115,6 +115,25 @@ Factory Method
 ### Justificación
 
 Hamburguesa crea un objeto dependiendo de las elecciones de usuario (Pan, Carne, Queso,...), por lo que Hamburguesa está funcionando como una Factory.
+## reto #3
+## Diseño UML
+
+### Explicacion del punto
+- Contenía atributos comunes como marca, modelo, año.
+- Tenía métodos generales como mostrarInfo().
+
+Clases hijas (Carro, Moto, etc.):
+
+Heredaban de Vehiculo.
+
+- Agregaban atributos propios (ejemplo: número de puertas para un carro, cilindrada para una moto).
+- Sobrescribían métodos (toString() o mostrarInfo()) para mostrar su información específica.
+
+Uso de main:
+
+- En la clase principal se crearon objetos de Carro y Moto.
+
+Se usaron los métodos para imprimir la información y simular comportamientos.
 
 ## Reto #5: El Café Personalizado
 La Cafetería Creativa permite a los clientes personalizar su café agregando toppings, salsas y complementos. Cada topping tiene un precio adicional y puede combinarse con otros. Sin embargo el sistema actual es muy deficiente por lo cual los han contratado para mejorar la producción de los cafés siendo baristas.
@@ -135,6 +154,18 @@ Se hizo uso de este Patrón de Diseño por:
 ### Como se aplico
 
 Beverage es la interfaz común, BaseCoffee la implementación base y BeverageDecorator la clase abstracta que envuelve otra Beverage; cada topping se modela como un objeto Topping y se aplica creando un ToppingDecorator que envuelve la bebida actual (beverage = new ToppingDecorator(beverage, topping)), de modo que getDescription concatena nombres y cost suma precios de forma acumulativa, permitiendo componer en tiempo de ejecución cualquier combinación de toppings sin crear clases por combinación.
+## Reto #7
+#### Diseño UML
+![img.png](img.png)
+
+### Explicacion
+
+- En este ejercicio se construyó un control remoto mágico utilizando el patrón de diseño Command, donde cada acción se 
+encapsula en una clase independiente que implementa una interfaz común. Los dispositivos (Luz, Puerta, Musica, Volumen) 
+representan a los receptores que realizan las operaciones, mientras que las clases de comando (EncenderLuzCommand, AbrirPuertaCommand, etc.) 
+actúan como intermediarios que traducen las órdenes del usuario en llamadas concretas a los dispositivos. 
+El ControlRemoto funge como invocador que ejecuta los comandos, y la clase ControlRemotoApp organiza la ejecución creando dispositivos, asociando comandos y simulando el uso del control. 
+Finalmente, el RegistroAccion lleva el historial de operaciones realizadas, brindando trazabilidad y la base para futuras extensiones como la funcionalidad de deshacer.
 
 ## Reto #8
 #### Diseño UML
