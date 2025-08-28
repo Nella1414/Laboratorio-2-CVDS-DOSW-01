@@ -117,6 +117,7 @@ Factory Method
 Hamburguesa crea un objeto dependiendo de las elecciones de usuario (Pan, Carne, Queso,...), por lo que Hamburguesa está funcionando como una Factory.
 ## reto #3
 ## Diseño UML
+![img_1.png](img_1.png)
 
 ### Explicacion del punto
 - Contenía atributos comunes como marca, modelo, año.
